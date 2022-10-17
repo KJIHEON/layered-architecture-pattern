@@ -24,6 +24,12 @@ class PostsController {
     //포스트 서비스에서 createPost 메서드를 실행함
     res.status(201).json({ data: createPostData });
   }
+
+  getPostOne = async (req,res,next)=>{
+    const {postId} = req.params;
+    const posts = await this.postService.findOnePost(postId);
+    res.status(200).json({data : posts})
+  }
 }
 
 module.exports = PostsController;

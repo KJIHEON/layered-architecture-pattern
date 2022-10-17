@@ -13,4 +13,6 @@ router.get('/', postsController.getPosts);
 
 router.post('/', postsController.createPost);
 //어떤 url과 ,http메서드가 어떤 컨트롤러의 메서드로 갈지 확인 하는것 미들웨어 사용가능
+
+router.get('/:postId', postsController.getPostOne);
 module.exports = router;
